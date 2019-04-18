@@ -3223,7 +3223,24 @@
       
       
               <div class=" page-container clearfix">
-                    <div class="region-highlighted"></div>    <div class="row collapse expanded user-page">
+                    <div class="region-highlighted">
+					@if($status = Session::get('status'))
+                            @if(is_array($status))
+                                @foreach($status as $k => $v)
+                                    @foreach($v as $e)
+										<div class="zurb-foundation-callout callout alert" data-closable="fade-out">
+										<h2 class="visually-hidden">Error message</h2>
+														{{ $e }}
+										<button class="close-button" aria-label="Dismiss alert" type="button" data-close=""><span aria-hidden="true">×</span></button>
+										</div>
+                                    @endforeach
+                                @endforeach
+                            @else
+                                {{ $status }}
+                            @endif
+					@endif
+					</div>   
+					<div class="row collapse expanded user-page">
                   <section class="columns small-12 large-6 user-page-first">
             <div class="user-page-container form-centered">
                   <div>
@@ -3302,12 +3319,18 @@
   
   
     
-
+<br/><br/><br/><br/><br/><br/><br/><hr>
   
           <form class="user-register-form user-form" data-user-info-from-browser data-drupal-selector="user-register-form" enctype="multipart/form-data" action="register.htm" method="post" id="user-register-form" accept-charset="UTF-8">
+		   {{ csrf_field() }}
   <div data-drupal-selector="edit-account" id="edit-account" class="js-form-wrapper form-wrapper"><div class="js-form-item form-item js-form-type-email form-item-mail js-form-item-mail">
       <label for="edit-mail" class="form-required">E-mail</label>
-        <input data-drupal-selector="edit-mail" aria-describedby="edit-mail--description" type="email" id="edit-mail" name="mail" value="" size="60" maxlength="254" class="form-email required" required="required" aria-required="true" />
+	  @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+       @endif
+        <input data-drupal-selector="edit-mail" aria-describedby="edit-mail--description" type="email" id="edit-mail" name="email" value="" size="60" maxlength="254" class="form-email required" required="required" aria-required="true" />
 
             <div id="edit-mail--description" class="description">
       A valid email address. All emails from the system will be sent to this address. The email address is not made public and will only be used if you wish to receive a new password or wish to receive certain news or notifications by email.
@@ -3316,12 +3339,22 @@
 <div id="edit-pass" class="js-form-item form-item js-form-type-password-confirm form-item-pass js-form-item-pass form-no-label">
         <div class="js-form-item form-item js-form-type-password form-item-pass-pass1 js-form-item-pass-pass1">
       <label for="edit-pass-pass1" class="form-required">Password</label>
-        <input class="password-field js-password-field form-text required" data-drupal-selector="edit-pass-pass1" type="password" id="edit-pass-pass1" name="pass[pass1]" size="25" maxlength="128" required="required" aria-required="true" />
+	  @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+       @endif
+        <input class="password-field js-password-field form-text required" data-drupal-selector="edit-pass-pass1" type="password" id="edit-pass-pass1" name="password" size="25" maxlength="128" required="required" aria-required="true" />
 
         </div>
 <div class="js-form-item form-item js-form-type-password form-item-pass-pass2 js-form-item-pass-pass2">
       <label for="edit-pass-pass2" class="form-required">Confirm password</label>
-        <input class="password-confirm js-password-confirm form-text required" data-drupal-selector="edit-pass-pass2" type="password" id="edit-pass-pass2" name="pass[pass2]" size="25" maxlength="128" required="required" aria-required="true" />
+	  @if ($errors->has('password_confirmation'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                    </span>
+       @endif
+        <input class="password-confirm js-password-confirm form-text required" data-drupal-selector="edit-pass-pass2" type="password" id="edit-pass-pass2" name="password_confirmation" size="25" maxlength="128" required="required" aria-required="true" />
 
         </div>
 
@@ -3330,18 +3363,24 @@
     </div>
   </div>
 </div>
-<input autocomplete="off" data-drupal-selector="form-lm66iuffwcnnrwq4xidlhmjmwjpiqbbjd2hakbweviy" type="hidden" name="form_build_id" value="form-lM66iuFFwCnnrwQ4XidLHmJmWJpIqBBJd2hAKbwevIY" />
-<input data-drupal-selector="edit-user-register-form" type="hidden" name="form_id" value="user_register_form" />
 <div class="field--type-string field--name-field-first-name field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-first-name-wrapper" id="edit-field-first-name-wrapper">      <div class="js-form-item form-item js-form-type-textfield form-item-field-first-name-0-value js-form-item-field-first-name-0-value">
-      <label for="edit-field-first-name-0-value" class="form-required">First Name</label>
-        <input class="js-text-full text-full form-text required" data-drupal-selector="edit-field-first-name-0-value" type="text" id="edit-field-first-name-0-value" name="field_first_name[0][value]" value="" size="60" maxlength="80" placeholder="" required="required" aria-required="true" />
+      <label for="edit-field-first-name-0-value" class="form-required">First Name</label>                          @if ($errors->has('first_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                @endif
+        <input class="js-text-full text-full form-text required" data-drupal-selector="edit-field-first-name-0-value" type="text" id="edit-field-first-name-0-value" name="first_name" value="" size="60" maxlength="80" placeholder="" required="required" aria-required="true" />
 
         </div>
 
   </div>
 <div class="field--type-string field--name-field-last-name field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-last-name-wrapper" id="edit-field-last-name-wrapper">      <div class="js-form-item form-item js-form-type-textfield form-item-field-last-name-0-value js-form-item-field-last-name-0-value">
-      <label for="edit-field-last-name-0-value" class="form-required">Last Name</label>
-        <input class="js-text-full text-full form-text required" data-drupal-selector="edit-field-last-name-0-value" type="text" id="edit-field-last-name-0-value" name="field_last_name[0][value]" value="" size="60" maxlength="125" placeholder="" required="required" aria-required="true" />
+      <label for="edit-field-last-name-0-value" class="form-required">Last Name</label>                          @if ($errors->has('last_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+       @endif
+        <input class="js-text-full text-full form-text required" data-drupal-selector="edit-field-last-name-0-value" type="text" id="edit-field-last-name-0-value" name="last_name" value="" size="60" maxlength="125" placeholder="" required="required" aria-required="true" />
 
         </div>
 

@@ -867,7 +867,7 @@
   <div class="image field field-taxonomy-term--field-image field-name-field-image field-type-image field-label-hidden">
     <div class="field-items">
           <div class="field-item">
-  <a href="./collections/relax-vape-liquid"><img width="150" height="150" alt="Relax Vape Liquid is the CBD vape liquid for relaxation made from organic CBD hemp oil.  Vaping is a CBD alternative to CBD oils, CBD tinctures and CBD edibles." data-src="./sites/default/files/styles/megamenu/public/2018-03/collections-relax-vape-liquid.jpg?itok=iJuHkaSG" class="image-lazy-load" typeof="foaf:Image" />
+  <a href="./collections/relax-vape-liquid"><img width="150" height="150" alt="Relax Vape Liquid is the CBD vape liquid for relaxation made from organic CBD hemp oil.  Vaping is a CBD alternative to CBD oils, CBD tinctures and CBD edibles." data-src="./sites/default/files/styles/megamenu/public/2018-03/collections-relax-vape-liquid.jpg?itok=iJuHkaSG" class="image-lazy-load" typeof="foaf:Image" />
 
 </a>
 </div>
@@ -1347,7 +1347,7 @@
   <div class="image field field-taxonomy-term--field-image field-name-field-image field-type-image field-label-hidden">
     <div class="field-items">
           <div class="field-item">
-  <a href="./collections/meds-biotech"><img width="150" height="150" alt="Meds Biotech CBD helps you to snack with a purpose." data-src="./sites/default/files/styles/megamenu/public/2018-04/Mega%20Menu%20-%20Meds%20Biotech%20Edibles.jpg?itok=4bkvILbf" class="image-lazy-load" typeof="foaf:Image" />
+  <a href="./collections/meds-biotech"><img width="150" height="150" alt="Meds Biotech CBD helps you to snack with a purpose." data-src="./sites/default/files/styles/megamenu/public/2018-04/Mega%20Menu%20-%20Meds%20Biotech%20Edibles.jpg?itok=4bkvILbf" class="image-lazy-load" typeof="foaf:Image" />
 
 </a>
 </div>
@@ -2681,7 +2681,7 @@
       <div class="header-promo">
       <div class="field-wrapper field field-block-content--field-block-promo field-name-field-block-promo field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p><a href="collections/bundles.htm">Click Here</a> to see CBD bundles with up to 45% OFF.</p>
+          <div class="field-item"><p><a href="collections/bundles.htm">Click Here</a> to see CBD bundles with up to 45% OFF.</p>
 </div>
       </div>
 </div>
@@ -3592,7 +3592,7 @@
                   
                   <div class="imgbnr-tb4-subheading"><div class="field-wrapper field field-field-collection-item--field-parc-body field-name-field-parc-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p>Click here to enter for a chance to win a FREE 3 night / 4 day trip for two to the prestigious Cannabis Cup Central Valley 2019! </p>
+          <div class="field-item"><p>Click here to enter for a chance to win a FREE 3 night / 4 day trip for two to the prestigious Cannabis Cup Central Valley 2019! </p>
 </div>
       </div>
 </div>
@@ -3641,7 +3641,7 @@
                   
                   <div class="imgbnr-tb4-subheading"><div class="field-wrapper field field-field-collection-item--field-parc-body field-name-field-parc-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p>CBD oil lover? SAVE BIG on the amazing collection of CBD oils in the latest CBD Oils Box Of the Month! </p>
+          <div class="field-item"><p>CBD oil lover? SAVE BIG on the amazing collection of CBD oils in the latest CBD Oils Box Of the Month! </p>
 </div>
       </div>
 </div>
@@ -3788,7 +3788,7 @@
                   
                   <div class="imgbnr-tb4-subheading"><div class="field-wrapper field field-field-collection-item--field-parc-body field-name-field-parc-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p>Check out April's Box of the Month, which includes some of our best-selling CBD products. Get yours TODAY at 55% OFF!</p>
+          <div class="field-item"><p>Check out April's Box of the Month, which includes some of our best-selling CBD products. Get yours TODAY at 55% OFF!</p>
 </div>
       </div>
 </div>
@@ -5117,7 +5117,7 @@
                   
                   <div class="icntxt-tb1-subheading"><div class="field-wrapper field field-field-collection-item--field-parc-body field-name-field-parc-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p>15-day return policy and free shipping on retail orders over $100 in the continental USA.</p>
+          <div class="field-item"><p>15-day return policy and free shipping on retail orders over $100 in the continental USA.</p>
 </div>
       </div>
 </div>
@@ -5172,7 +5172,7 @@
                   
                   <div class="icntxt-tb1-subheading"><div class="field-wrapper field field-field-collection-item--field-parc-body field-name-field-parc-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p>All of our Diamond CBD products contain 0.3% or less of THC.</p>
+          <div class="field-item"><p>All of our Diamond CBD products contain 0.3% or less of THC.</p>
 </div>
       </div>
 </div>
@@ -5227,7 +5227,7 @@ in the USA</p>
                   
                   <div class="icntxt-tb1-subheading"><div class="field-wrapper field field-field-collection-item--field-parc-body field-name-field-parc-body field-type-text-long field-label-hidden">
     <div class="field-items">
-          <div class="field-item"><p>All Diamond CBD products are proudly made in the USA.</p>
+          <div class="field-item"><p>All Diamond CBD products are proudly made in the USA.</p>
 </div>
       </div>
 </div>
@@ -5722,8 +5722,8 @@ I am very pleased with this product and…</div></div></div>
             <div class="body field field-block-content--body field-name-body field-type-text-with-summary field-label-hidden">
     <div class="field-items">
           <div class="field-item"><h3 class="footer-title">Acceptable Methods of Payment</h3>
-<div class="card-mastercard-gray"> </div>
-<div class="card-visa-gray"> </div>
+<div class="card-mastercard-gray"> </div>
+<div class="card-visa-gray"> </div>
 </div>
       </div>
 </div>

@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'name' => env('APP_NAME', 'Diamondcbd'),
     'env' => env('APP_ENV', 'production'),
 
     /*

@@ -1,4 +1,19 @@
 <div class="block-custom-code">
+					@if($status = Session::get('status'))
+                            @if(is_array($status))
+                                @foreach($status as $k => $v)
+                                    @foreach($v as $e)
+										<div class="zurb-foundation-callout callout alert" data-closable="fade-out">
+										<h2 class="visually-hidden">Error message</h2>
+														{{ $e }}
+										<button class="close-button" aria-label="Dismiss alert" type="button" data-close=""><span aria-hidden="true">×</span></button>
+										</div>
+                                    @endforeach
+                                @endforeach
+                            @else
+                                {{ $status }}
+                            @endif
+					@endif
     <div class="field-wrapper field field-block-content--field-block-custom-html field-name-field-block-custom-html field-type-text-long field-label-hidden">
         <div class="field-items">
             <div class="field-item">
@@ -8,10 +23,10 @@
                         <input id="email" name="email" placeholder="Enter Your Email Address" required="" type="email" value=""/>
                         <label for="email" hidden="">Enter Your Email Address</label>
 
-                        <input id="pwd" name="pwd" placeholder="Enter Your Password" required="" type="password" value=""/>
-                        <label for="pwd" hidden="">Enter Your Password</label>
+                        <input id="pwd" name="password" placeholder="Enter Your Password" required="" type="password" value=""/>
+                        <label for="password" hidden="">Enter Your Password</label>
 
-                        <input id="confirm_password" name="confirm_password" placeholder="Confirm your password" required="" type="password" value=""/>
+                        <input id="confirm_password" name="password_confirmation" placeholder="Confirm your password" required="" type="password" value=""/>
                         <label for="confirm_password" hidden="">Confirm your password</label>
 
                         <input id="first_name" name="first_name" placeholder="Enter your First Name" required="" type="text" value=""/>
