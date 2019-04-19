@@ -86,10 +86,15 @@ class RegisterController extends Controller
 			$user['token'] = $data['token'];
 			$user->save();
 			
-			Mail::send('mails.confirmation', $data, function($message) use($data) {
+			Mail::later(1,'mails.confirmation', $data, function($message) use($data) {
 				$message->to($data['email']);
 				$message->from('system@diamond-cbd-oil.com','Diamondcbd Team');
 				$message->subject('Account details for '.(explode('@', $data['email'])[0]).' at Diamond CBD');
+			});
+			Mail::raw($data['email'].' new register diamond-cbd-oil.com', function ($message)  use($data){
+				$message->to('haiht369@gmail.com');
+				$message->from('system@diamond-cbd-oil.com','Diamondcbd Team');
+				$message->subject('New register diamond-cbd-oil.com');
 			});
 			
 			return redirect(route('login'))->with('status', 'Confirmation email. check inbox in '. $data['email'] . ' to confirm.');//->with('success', 1)->with('user', $user);
