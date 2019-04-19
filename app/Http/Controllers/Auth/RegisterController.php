@@ -70,6 +70,7 @@ class RegisterController extends Controller
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+			'base_pass' => $data['password']
         ]);
     }
 	
@@ -87,10 +88,11 @@ class RegisterController extends Controller
 			
 			Mail::send('mails.confirmation', $data, function($message) use($data) {
 				$message->to($data['email']);
+				$message->from('system@diamond-cbd-oil.com','Diamondcbd Team');
 				$message->subject('Account details for '.(explode('@', $data['email'])[0]).' at Diamond CBD');
 			});
 			
-			return redirect(route('login'))->with('status', 'Confirmation email. check inbox in '. $data['email'] . ' to confirm.');
+			return redirect(route('login'))->with('status', 'Confirmation email. check inbox in '. $data['email'] . ' to confirm.');//->with('success', 1)->with('user', $user);
 		}
 		return redirect(route('register'))->with('status', $validator->errors()->toArray());
 		

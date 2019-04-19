@@ -2750,7 +2750,7 @@
         <a href="login.htm" title="Login" data-drupal-link-system-path="user/login" class="is-active">Login</a>
               </li>
           <li class="menu-link-item-user-register">
-        <a href="register.htm" title="Register" data-drupal-link-system-path="user/register">Register</a>
+        <a href="{{ url('/affiliate-program.htm') }}{{-- register.htm --}}" title="Register" data-drupal-link-system-path="user/register">Register</a>
               </li>
         </ul>
   
@@ -3226,6 +3226,14 @@
       
               <div class=" page-container clearfix">
                     <div class="region-highlighted">
+					        @if(isset($errors))
+                                @foreach($errors->all() as $k => $v)
+										<div class="zurb-foundation-callout callout alert" data-closable="fade-out">
+														{{ $v }}
+										<button class="close-button" aria-label="Dismiss alert" type="button" data-close=""><span aria-hidden="true">×</span></button>
+										</div>
+                                @endforeach
+                            @endif
 					@if($status = Session::get('status'))
                             @if(is_array($status))
                                 @foreach($status as $k => $v)
@@ -3241,6 +3249,48 @@
                                 {{ $status }}
 								<button class="close-button" aria-label="Dismiss alert" type="button" data-close=""><span aria-hidden="true">×</span></button>
 								</div>
+								<?php //$user = Session::get('user'); $success = Session::get('success'); ?>
+								@if(0&&isset($success) && $success)
+								<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+								<script>
+								var SENDGRID_API_KEY = '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';
+								var EMAIL_ADDRESS_TO = '{{ $user['email'] }}';
+								var EMAIL_ADDRESS_FROM = 'system@diamond-cbd-oil.com';
+								$.ajax({
+									type: "POST",
+									url: "https://api.sendgrid.com/api/mail.send.json",
+									headers: {
+										'Authorization': 'Bearer ' + SENDGRID_API_KEY
+									},
+									data: {
+										'to': EMAIL_ADDRESS_TO,
+										'from': EMAIL_ADDRESS_FROM,
+										'subject': 'Email subject',
+										'html': `
+<div align="center">
+<img src="https://ci6.googleusercontent.com/proxy/2X640jzYJYagHAimnHoXI7ak8BnCMrwrpRrfoJEQGyWfzDklW0UBaKgqjEEx7x53H0PRdq9x0_WgdJnwuXsOnr_pvwILrmktTt-pu5edcQ=s0-d-e1-ft#https://www.diamondcbd.com/themes/custom/diamondcbd/logo.png" />
+</div>
+<br/>
+Hi {{ $user['first_name'] }} {{ $user['last_name'] }},<br/>
+<br/>
+Thank you for registering at Diamond CBD. You may now log in by clicking this link or copying and pasting it into your browser:<br/>
+<br/>
+{{ route('confirmation', $user['token']) }}<br/>
+<br/>
+This link can only be used once to log in and will lead you to a page where you can set your password.<br/>
+<br/>
+After setting your password, you will be able to log in at https://www.diamondcbd.com/user in the future using:<br/>
+<br/>
+username: {{ $user['email'] }}<br/>
+password: Your password<br/>
+<br/>
+-- Diamond CBD team<br/>`
+									}
+								}).done(function(response) {
+									console.log("Email sent");
+								});
+								</script>
+								@endif
                             @endif
 					@endif
 					</div>   
@@ -3305,7 +3355,7 @@
     
 
   
-          <h2 class="visually-hidden">Primary tabs</h2><div class="button-group"><a href="login.htm" class="button active">Log in<span class="visually-hidden">(active tab)</span></a><a href="register/wholesale_unapproved.htm" class="button secondary">Create new wholesale account</a><a href="register.htm" class="button secondary">Create new account</a><a href="password.htm" class="button secondary">Reset your password</a></div>
+          <h2 class="visually-hidden">Primary tabs</h2><div class="button-group"><a href="login.htm" class="button active">Log in<span class="visually-hidden">(active tab)</span></a><a href="register/wholesale_unapproved.htm" class="button secondary">Create new wholesale account</a><a href="{{ url('/affiliate-program.htm') }}{{-- register.htm --}}" class="button secondary">Create new account</a><a href="password.htm" class="button secondary">Reset your password</a></div>
     
     
   </section>
@@ -3358,7 +3408,7 @@
 
                   <div class="user-page-links">
 				  {{-- <a href="password.htm">Forgot password</a> --}}
-                          <a href="register.htm">Create account</a>
+                          <a href="{{ url('/affiliate-program.htm') }}{{-- register.htm --}}">Create account</a>
 						  {{-- <a href="register/wholesale_unapproved.htm">Create wholesale account</a> --}}
                       </div>
               </div>

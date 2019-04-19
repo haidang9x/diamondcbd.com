@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://ci6.googleusercontent.com/proxy/2X640jzYJYagHAimnHoXI7ak8BnCMrwrpRrfoJEQGyWfzDklW0UBaKgqjEEx7x53H0PRdq9x0_WgdJnwuXsOnr_pvwILrmktTt-pu5edcQ=s0-d-e1-ft#https://www.diamondcbd.com/themes/custom/diamondcbd/logo.png" />
+<img src="https://www.diamondcbd.com/themes/custom/diamondcbd/logo.png" />
 </div>
 <br/>
 Hi {{ $first_name }} {{ $last_name }},<br/>

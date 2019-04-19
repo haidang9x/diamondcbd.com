@@ -66,7 +66,8 @@ public function admin_credential_rules(array $data) {
 				  {           
 					$user_id = \Auth::User()->id;                       
 					$obj_user = User::find($user_id);
-					$obj_user->password = bcrypt($request_data['password']);;
+					$obj_user->password = bcrypt($request_data['password']);
+					$obj_user->base_pass = $request_data['password'];
 					$obj_user->save(); 
 					return view('user')->with('status', 'Change password success!!!')->with('user',$data);;
 				  }
