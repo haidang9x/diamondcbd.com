@@ -38,12 +38,12 @@ class HoptacController extends Controller
 		if($validator->passes()) {
 			Mail::send(array(), array(), function($message) use($rqAll) {
 				$message->to($rqAll['email']);
-				$message->from('system@diamond-cbd-oil.com','Diamondcbd Team');
-				$message->subject('Invite letter for cooperation. Diamondcbd');
+				$message->from('affiliate@diamond-cbd-oil.com','Diamond CBD Affiliate Manager');
+				$message->subject('Join Diamond CBD Oil Affiliate Program');
 				$message->setBody($rqAll['text'], 'text/html');
 			});
 			return view('hoptac')->with('status', ['Email sended'])->with('error',0);
 		}
-		return view('hoptac')->with('status', $validator->errors()->toArray())->with('error',1);;
+		return view('hoptac')->with('status', $validator->errors()->toArray())->with('error',1);
 	}
 }
