@@ -25,5 +25,9 @@ Route::post('/user/login.htm', '\App\Http\Controllers\Auth\LoginController@login
 Route::get('/user/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('users/confirmation/{token}', 'Auth\RegisterController@confirmation')->name('confirmation');
 //Route::auth();
+//hop tac
+Route::get('/thuhoptac', 'HoptacController@index');
+Route::post('/thuhoptac', 'HoptacController@postEmail');
+
 
 Route::get('/home', 'HomeController@index');

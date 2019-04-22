@@ -2,7 +2,12 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews
     </IfModule>
+# AuthType Basic
+# AuthName "Please login."
+# AuthUserFile "/xxx/.htpasswd"
 
+# Require expr %{REQUEST_URI} =~ m#^/callbacks/.*#
+# Require valid-user
     RewriteEngine On
 
     # Redirect Trailing Slashes If Not A Folder...
